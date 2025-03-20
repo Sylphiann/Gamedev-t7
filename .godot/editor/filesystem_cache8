@@ -1,9 +1,0 @@
-ea4bc82a6ad023ab7ee23ee620429895
-::res://::1742481928
-default_env.tres::Environment::4814150903475785799::1742480854::0::1::::<><>::
-icon.png::CompressedTexture2D::9137558362059491910::1742470618::1742481929::1::::<><>::
-::res://assets/::1742470692
-Keanu.png::CompressedTexture2D::188488147458146570::1742470618::1742481929::1::::<><>::
-::res://scenes/::1742481838
-Box.tscn::PackedScene::-1::1742470663::0::1::::<><>::
-Level.tscn::PackedScene::2238262436608783672::1742481838::0::1::::<><>::res://Scenes/Box.tscn

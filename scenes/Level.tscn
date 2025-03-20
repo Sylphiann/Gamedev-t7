@@ -1,79 +1,71 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://65h4c0mrp6k7"]
 
-[ext_resource path="res://Scenes/Box.tscn" type="PackedScene" id=1]
+[ext_resource type="PackedScene" path="res://Scenes/Box.tscn" id="1"]
 
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.498039, 0.498039, 0.498039, 1 )
+[sub_resource type="StandardMaterial3D" id="3"]
+albedo_color = Color(0.498039, 0.498039, 0.498039, 1)
 
-[sub_resource type="PlaneMesh" id=1]
-material = SubResource( 3 )
-size = Vector2( 50, 50 )
+[sub_resource type="PlaneMesh" id="1"]
+material = SubResource("3")
+size = Vector2(50, 50)
 
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 25, 0, 25 )
+[sub_resource type="BoxShape3D" id="2"]
+size = Vector3(50, 0, 50)
 
-[sub_resource type="SpatialMaterial" id=6]
-albedo_color = Color( 1, 0, 0, 1 )
+[sub_resource type="StandardMaterial3D" id="6"]
+albedo_color = Color(1, 0, 0, 1)
 
-[sub_resource type="CubeMesh" id=4]
-material = SubResource( 6 )
+[sub_resource type="BoxMesh" id="4"]
+material = SubResource("6")
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape3D" id="5"]
 
-[node name="Level" type="Spatial"]
+[node name="Level" type="Node3D"]
 
-[node name="Ground" type="MeshInstance" parent="."]
-editor/display_folded = true
-mesh = SubResource( 1 )
-material/0 = null
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("1")
 
-[node name="StaticBody" type="StaticBody" parent="Ground"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Ground/StaticBody"]
-shape = SubResource( 2 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
+shape = SubResource("2")
 
-[node name="Wall" type="MeshInstance" parent="."]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 25, 25 )
-mesh = SubResource( 1 )
-material/0 = null
+[node name="Wall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 25, 25)
+mesh = SubResource("1")
 
-[node name="StaticBody" type="StaticBody" parent="Wall"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Wall/StaticBody"]
-shape = SubResource( 2 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D"]
+shape = SubResource("2")
 
-[node name="Wall2" type="MeshInstance" parent="."]
-editor/display_folded = true
-transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, 25, 25, 0 )
-mesh = SubResource( 1 )
-material/0 = null
+[node name="Wall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 25, 25, 0)
+mesh = SubResource("1")
 
-[node name="StaticBody" type="StaticBody" parent="Wall2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Wall2/StaticBody"]
-shape = SubResource( 2 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/StaticBody3D"]
+shape = SubResource("2")
 
-[node name="Box" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97242, 1.41444, 0 )
+[node name="Box" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97242, 1.41444, 0)
 
-[node name="Box3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97242, 1.41444, -3.342 )
+[node name="Box3" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97242, 1.41444, -3.342)
 
-[node name="Box2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97242, 1.41444, 3.30037 )
+[node name="Box2" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97242, 1.41444, 3.30037)
 
-[node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.7144, 0.0330887 )
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.7144, 0.0330887)
 omni_range = 49.945
 
-[node name="Switch" type="MeshInstance" parent="."]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 25.5 )
-mesh = SubResource( 4 )
-material/0 = null
+[node name="Switch" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 25.5)
+mesh = SubResource("4")
 
-[node name="StaticBody" type="StaticBody" parent="Switch"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Switch"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Switch/StaticBody"]
-shape = SubResource( 5 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Switch/StaticBody3D"]
+shape = SubResource("5")

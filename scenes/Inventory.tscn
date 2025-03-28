@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctjqxj8rsvf0l"]
+
+[ext_resource type="Script" path="res://Scripts/Control.gd" id="1_bdh3w"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bdh3w")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1140.0
+offset_bottom = 639.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 189.0

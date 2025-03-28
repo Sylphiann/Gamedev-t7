@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://del0po1qn5n5p"]
+
+[ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_16twp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2fnlp"]
+albedo_color = Color(0.559892, 0.494907, 0.958078, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_3tj5w"]
+material = SubResource("StandardMaterial3D_2fnlp")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mps7q"]
+radius = 0.751127
+
+[node name="Ball" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_16twp")
+item_name = null
+amount = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("SphereMesh_3tj5w")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_mps7q")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

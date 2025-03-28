@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://4b8i3tt5165o"]
+
+[ext_resource type="PackedScene" uid="uid://drm4y74jrqvsk" path="res://Scenes/World1.tscn" id="1_kwgdl"]
+[ext_resource type="PackedScene" uid="uid://c68pa8868siao" path="res://Scenes/Player.tscn" id="2_ic5qu"]
+[ext_resource type="PackedScene" uid="uid://dw4u78pxf3uxb" path="res://Scenes/WinningArea.tscn" id="3_7b8m5"]
+[ext_resource type="Script" path="res://Scripts/InventoryUI.gd" id="4_bf4ks"]
+
+[node name="Level1" type="Node3D"]
+
+[node name="World1" parent="." instance=ExtResource("1_kwgdl")]
+
+[node name="Player" parent="." instance=ExtResource("2_ic5qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0659437, -0.127217, -2.56647)
+
+[node name="WinningArea" parent="." instance=ExtResource("3_7b8m5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28467, 0, 23.7471)
+sceneName = "Level"
+
+[node name="LosingArea" parent="." instance=ExtResource("3_7b8m5")]
+transform = Transform3D(1.975, 0, 0, 0, 1.24, 0, 0, 0, 6.31, -0.1593, -7.21765, 16.6023)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("4_bf4ks")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 60
